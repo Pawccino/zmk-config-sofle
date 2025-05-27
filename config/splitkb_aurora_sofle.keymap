@@ -35,7 +35,7 @@
                 &kp ESC     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5
                 &kp TAB     &kp Q      &kp W      &kp E      &kp R      &kp T
                 &kp LCTRL   &kp A      &kp S      &kp D      &kp F      &kp G
-                &kp LSHFT   &kp NONUS_BSLH  &kp Y  &kp X  &kp C  &kp V
+                &kp LSHFT   &kp NON_US_BACKSLASH  &kp Y  &kp X  &kp C  &kp V
                             &kp LGUI   &kp LALT   &mo 1   &kp BSPC   &kp SPACE   &none
 
 
