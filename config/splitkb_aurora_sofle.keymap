@@ -36,7 +36,7 @@
                 &kp TAB     &kp Q      &kp W      &kp E      &kp R      &kp T
                 &kp LCTRL   &kp A      &kp S      &kp D      &kp F      &kp G
                 &kp LSHFT   &kp NONUS_BSLH  &kp Y  &kp X  &kp C  &kp V
-                            &kp LGUI   &kp LALT   &mo 1      &kp BSPC   &kp SPACE   &none
+                            &kp LGUI   &kp LALT   &mo 1   &kp BSPC   &kp SPACE   &none
 
 
                 // RIGHT SIDE (top to bottom, left to right in matrix)
