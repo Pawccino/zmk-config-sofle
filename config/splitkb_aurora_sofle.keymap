@@ -39,7 +39,7 @@ bindings = <
   // Row 3
   &kp LSHFT   &kp NON_US_BACKSLASH  &kp Y  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp MINUS
   // Row 4 (thumbs)
-  &kp LGUI    &kp LALT   &mo 1   &kp BSPC   &kp SPACE   &none   &kp SPACE  &kp RET    &kp RALT   &mo 2      &kp RSHFT   &none
+  &none        &kp LGUI    &kp LALT   &mo 1   &kp BSPC   &kp SPACE   &kp SPACE  &kp RET    &kp RALT   &mo 2      &kp RSHFT   &none
 >;
 
         };
