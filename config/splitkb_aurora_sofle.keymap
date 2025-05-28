@@ -30,12 +30,16 @@
 //               |CTRL | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   | RALT |
 
 bindings = <
-    // LEFT SIDE (top to bottom, left to right in matrix)
-    &kp ESC     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp SLASH
-    &kp TAB     &kp Q      &kp W      &kp E      &kp R      &kp T      &kp Z      &kp U      &kp I      &kp O      &kp P      &kp SQT
-    &kp LCTRL   &kp A      &kp S      &kp D      &kp F      &kp G      &kp H      &kp J      &kp K      &kp L      &kp RBKT   &kp LBKT
-    &kp LSHFT   &kp NON_US_BACKSLASH  &kp Y  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp MINUS
-                  &kp LGUI   &kp LALT   &mo 1   &kp BSPC   &kp SPACE   &none   &kp SPACE  &kp RET    &kp RALT   &mo 2      &kp RSHFT   &none
+  // Row 0
+  &kp ESC     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp SLASH
+  // Row 1
+  &kp TAB     &kp Q      &kp W      &kp E      &kp R      &kp T      &kp Z      &kp U      &kp I      &kp O      &kp P      &kp SQT
+  // Row 2
+  &kp LCTRL   &kp A      &kp S      &kp D      &kp F      &kp G      &kp H      &kp J      &kp K      &kp L      &kp RBKT   &kp LBKT
+  // Row 3
+  &kp LSHFT   &kp NON_US_BACKSLASH  &kp Y  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp MINUS
+  // Row 4 (thumbs)
+  &kp LGUI    &kp LALT   &mo 1   &kp BSPC   &kp SPACE   &none   &kp SPACE  &kp RET    &kp RALT   &mo 2      &kp RSHFT   &none
 >;
 
         };
