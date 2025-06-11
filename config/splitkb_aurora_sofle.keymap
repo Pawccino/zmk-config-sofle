@@ -11,11 +11,7 @@
 
 / {
     behaviors {
-        brace_key: mod_morph {
-            compatible = "zmk,behavior-mod-morph";
-            bindings = <&kp LCURLY_BRACE &kp RCURLY_BRACE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+
     };
 
     keymap {
