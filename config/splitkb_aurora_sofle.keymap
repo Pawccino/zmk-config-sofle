@@ -11,10 +11,6 @@
 
 / {
     behaviors {
-        kp: behavior_kp {
-            compatible = "zmk,behavior-key-press";
-        };
-
         mo: behavior_mo {
             compatible = "zmk,behavior-momentary-layer";
         };
