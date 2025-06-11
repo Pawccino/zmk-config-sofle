@@ -10,6 +10,24 @@
 #include <behaviors.dtsi>
 
 / {
+    behaviors {
+        kp: behavior_kp {
+            compatible = "zmk,behavior-key-press";
+        };
+
+        mo: behavior_mo {
+            compatible = "zmk,behavior-momentary-layer";
+        };
+
+        bt: behavior_bt {
+            compatible = "zmk,behavior-bluetooth";
+        };
+
+        ext_power: behavior_ext_power {
+            compatible = "zmk,behavior-ext-power";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
