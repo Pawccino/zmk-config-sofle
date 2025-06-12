@@ -11,22 +11,22 @@
 
 / {
     behaviors {
-        bracket_l: behavior_kb_press_release {
+        bracket_l: bracket_l_behavior {
             compatible = "zmk,behavior-key-press-release";
             label = "BRACKET_L";
             bindings = <&kp LBKT>;
         };
-        bracket_r: behavior_kb_press_release {
+        bracket_r: bracket_r_behavior {
             compatible = "zmk,behavior-key-press-release";
             label = "BRACKET_R";
             bindings = <&kp RBKT>;
         };
-        brace_l: behavior_kb_press_release {
+        brace_l: brace_l_behavior {
             compatible = "zmk,behavior-key-press-release";
             label = "BRACE_L";
             bindings = <&kp LCBR>;
         };
-        brace_r: behavior_kb_press_release {
+        brace_r: brace_r_behavior {
             compatible = "zmk,behavior-key-press-release";
             label = "BRACE_R";
             bindings = <&kp RCBR>;
