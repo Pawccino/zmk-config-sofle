@@ -9,28 +9,27 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <behaviors.dtsi>
 
-/ {
-    behaviors {
-        bracket_l: bracket_l {
-            compatible = "zmk,behavior-key-press-release";
-            label = "BRACKET_L";
-            bindings = <&kp LBKT>;
-        };
-        bracket_r: bracket_r {
-            compatible = "zmk,behavior-key-press-release";
-            label = "BRACKET_R";
-            bindings = <&kp RBKT>;
-        };
-        brace_l: brace_l {
-            compatible = "zmk,behavior-key-press-release";
-            label = "BRACE_L";
-            bindings = <&kp LCBR>;
-        };
-        brace_r: brace_r {
-            compatible = "zmk,behavior-key-press-release";
-            label = "BRACE_R";
-            bindings = <&kp RCBR>;
-        };
+/
+{
+    bracket_l: bracket_l {
+        compatible = "zmk,behavior-key-press-release";
+        label = "BRACKET_L";
+        bindings = <&kp LBKT>;
+    };
+    bracket_r: bracket_r {
+        compatible = "zmk,behavior-key-press-release";
+        label = "BRACKET_R";
+        bindings = <&kp RBKT>;
+    };
+    brace_l: brace_l {
+        compatible = "zmk,behavior-key-press-release";
+        label = "BRACE_L";
+        bindings = <&kp LCBR>;
+    };
+    brace_r: brace_r {
+        compatible = "zmk,behavior-key-press-release";
+        label = "BRACE_R";
+        bindings = <&kp RCBR>;
     };
 
     keymap {
