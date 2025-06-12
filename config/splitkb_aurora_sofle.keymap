@@ -11,7 +11,26 @@
 
 / {
     behaviors {
-
+        bracket_l: behavior_kb_press_release {
+            compatible = "zmk,behavior-key-press-release";
+            label = "BRACKET_L";
+            bindings = <&kp LBKT>;
+        };
+        bracket_r: behavior_kb_press_release {
+            compatible = "zmk,behavior-key-press-release";
+            label = "BRACKET_R";
+            bindings = <&kp RBKT>;
+        };
+        brace_l: behavior_kb_press_release {
+            compatible = "zmk,behavior-key-press-release";
+            label = "BRACE_L";
+            bindings = <&kp LCBR>;
+        };
+        brace_r: behavior_kb_press_release {
+            compatible = "zmk,behavior-key-press-release";
+            label = "BRACE_R";
+            bindings = <&kp RCBR>;
+        };
     };
 
     keymap {
@@ -31,9 +50,9 @@
         lower_layer {
             bindings = <
 &kp GRAVE  &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                       &kp F6     &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
-&trans     &trans     &kp UP     &trans     &trans     &trans                       &trans     &trans     &kp PG_UP  &trans     &text "["  &text "]"
-&trans     &kp LEFT   &kp DOWN   &kp RIGHT  &kp DOLLAR &trans                       &trans     &kp HOME   &kp PG_DN  &kp END    &text "{"  &text "}"
-&trans     &trans     &trans     &trans     &trans     &trans    &trans   &trans    &trans     &text "-"  &text "+"  &text "["  &text "]"  &text "|"
+&trans     &trans     &kp UP     &trans     &trans     &trans                       &trans     &trans     &kp PG_UP  &trans     &bracket_l &bracket_r
+&trans     &kp LEFT   &kp DOWN   &kp RIGHT  &kp DOLLAR &trans                       &trans     &kp HOME   &kp PG_DN  &kp END    &brace_l   &brace_r
+&trans     &trans     &trans     &trans     &trans     &trans    &trans   &trans    &trans     &kp MINUS  &kp PLUS   &bracket_l &bracket_r &kp PIPE
                       &trans     &trans     &trans     &kp DEL   &trans   &trans    &trans     &trans     &trans     &trans
             >;
         };
