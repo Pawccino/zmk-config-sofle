@@ -25,12 +25,12 @@ behaviors {
         mods = <MOD_RALT>;
     };
 
-    morph_lbrace: morph_lbrace_node {
-        compatible = "zmk,behavior-mod-morph";
-        label = "MORPH_LBRACE";
-        bindings = <&kp APOS &kp LCBR>;
-        mods = <MOD_RALT>;
-    };
+morph_lbrace: morph_lbrace_node {
+    compatible = "zmk,behavior-mod-morph";
+    label = "MORPH_LBRACE";
+    bindings = <&kp APOS &kp APOS>;  // both fallback and RALT target are APOS
+    mods = <MOD_RALT>;
+};
 
     morph_rbrace: morph_rbrace_node {
         compatible = "zmk,behavior-mod-morph";
