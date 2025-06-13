@@ -10,26 +10,33 @@
 #include <behaviors.dtsi>
 
 / {
-    behaviors: behaviors {
-        bracket_l: bracket_l {
-            compatible = "zmk,behavior-key-press-release";
-            label = "BRACKET_L";
-            bindings = <&kp LBKT>;
+    behaviors {
+        morph_lbracket: mod_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORPH_LBRACKET";
+            bindings = <&kp RBRACKET>, <&kp LBKT>; // RBRACKET = Ü key, AltGr + Ü = [
+            mods = <MOD_RALT>;
         };
-        bracket_r: bracket_r {
-            compatible = "zmk,behavior-key-press-release";
-            label = "BRACKET_R";
-            bindings = <&kp RBKT>;
+
+        morph_rbracket: mod_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORPH_RBRACKET";
+            bindings = <&kp SQT>, <&kp RBKT>; // SQT = dummy key, RBKT = ]
+            mods = <MOD_RALT>;
         };
-        brace_l: brace_l {
-            compatible = "zmk,behavior-key-press-release";
-            label = "BRACE_L";
-            bindings = <&kp LCBR>;
+
+        morph_lbrace: mod_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORPH_LBRACE";
+            bindings = <&kp APOS>, <&kp LCBR>; // APOS = Ä key, AltGr + Ä = {
+            mods = <MOD_RALT>;
         };
-        brace_r: brace_r {
-            compatible = "zmk,behavior-key-press-release";
-            label = "BRACE_R";
-            bindings = <&kp RCBR>;
+
+        morph_rbrace: mod_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MORPH_RBRACE";
+            bindings = <&kp NUHS>, <&kp RCBR>; // NUHS = # key on CH ISO, AltGr + # = }
+            mods = <MOD_RALT>;
         };
     };
 
@@ -48,11 +55,11 @@
 
         lower_layer {
             bindings = <
-&kp GRAVE  &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                       &kp F6     &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
-&trans     &trans     &kp UP     &trans     &trans     &trans                       &trans     &trans     &kp PG_UP  &trans     &bracket_l &bracket_r
-&trans     &kp LEFT   &kp DOWN   &kp RIGHT  &kp DOLLAR &trans                       &trans     &kp HOME   &kp PG_DN  &kp END    &brace_l   &brace_r
-&trans     &trans     &trans     &trans     &trans     &trans    &trans   &trans    &trans     &kp MINUS  &kp PLUS   &bracket_l &bracket_r &kp DOLLAR
-                      &trans     &trans     &trans     &kp DEL   &trans   &trans    &trans     &trans     &trans     &trans
+  &kp GRAVE  &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
+  &trans     &trans     &kp UP     &trans     &trans     &trans                         &trans     &trans     &kp PG_UP  &trans     &morph_lbracket &morph_rbracket
+  &trans     &kp LEFT   &kp DOWN   &kp RIGHT  &kp DOLLAR &trans                         &trans     &kp HOME   &kp PG_DN  &kp END    &morph_lbrace   &morph_rbrace
+  &trans     &trans     &trans     &trans     &trans     &trans     &trans   &trans     &trans     &kp MINUS  &kp PLUS   &trans     &trans     &kp DOLLAR
+                      &trans     &trans     &trans     &kp DEL   &trans                 &trans     &trans     &trans     &trans
             >;
         };
     };
