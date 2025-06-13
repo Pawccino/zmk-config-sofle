@@ -16,28 +16,28 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RBKT>, <&kp LBKT>;
-            mods = <MOD_RALT>;
+            mods = <(MOD_RALT)>;
         };
 
         morph_rbracket: morph_rbracket_node {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp APOS>, <&kp RBKT>;
-            mods = <MOD_RALT>;
+            mods = <(MOD_RALT)>;
         };
 
         morph_lbrace: morph_lbrace_node {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp APOS>, <&kp APOS>;
-            mods = <MOD_RALT>;
+            mods = <(MOD_RALT)>;
         };
 
         morph_rbrace: morph_rbrace_node {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp NUHS>, <&kp RCBR>;
-            mods = <MOD_RALT>;
+            mods = <(MOD_RALT)>;
         };
     };
 
