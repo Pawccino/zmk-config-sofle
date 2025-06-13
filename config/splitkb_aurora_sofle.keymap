@@ -10,10 +10,6 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <behaviors.dtsi>
 
-Replace the previous incorrect include with a proper directive:
-
-#include <behaviors.dtsi>
-
 / {
     behaviors {
         morph_lbracket: morph_lbracket_node {
