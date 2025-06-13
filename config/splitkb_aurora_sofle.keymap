@@ -9,39 +9,35 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <behaviors.dtsi>
 
-
-
-/ {
+ / {
     behaviors {
         morph_lbracket: mod_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "MORPH_LBRACKET";
-            bindings = <&kp RBRACKET>, <&kp LBKT>;
+            bindings = <&kp RBRACKET &kp LBKT>;
             mods = <MOD_RALT>;
         };
 
         morph_rbracket: mod_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "MORPH_RBRACKET";
-            bindings = <&kp APOS>, <&kp RBKT>; // ✅ FIXED!
+            bindings = <&kp APOS &kp RBKT>;
             mods = <MOD_RALT>;
         };
 
         morph_lbrace: mod_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "MORPH_LBRACE";
-            bindings = <&kp APOS>, <&kp LCBR>;
+            bindings = <&kp APOS &kp LCBR>;
             mods = <MOD_RALT>;
         };
 
         morph_rbrace: mod_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "MORPH_RBRACE";
-            bindings = <&kp NUHS>, <&kp RCBR>;
+            bindings = <&kp NUHS &kp RCBR>;
             mods = <MOD_RALT>;
         };
-    };
-
     };
 
     keymap {
