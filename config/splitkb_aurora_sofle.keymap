@@ -23,7 +23,7 @@
         morph_rbracket: mod_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "MORPH_RBRACKET";
-            bindings = <&kp SQT>, <&kp RBKT>;
+            bindings = <&kp APOS>, <&kp RBKT>; // ✅ FIXED!
             mods = <MOD_RALT>;
         };
 
@@ -40,6 +40,8 @@
             bindings = <&kp NUHS>, <&kp RCBR>;
             mods = <MOD_RALT>;
         };
+    };
+
     };
 
     keymap {
