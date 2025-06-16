@@ -13,31 +13,27 @@
 / {
     behaviors {
         morph_lbracket: morph_lbracket_node {
-            compatible     = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings       = <&kp RBKT>, <&kp LBKT>;
-            mods           = <(MOD_RALT)>;
+            compatible = "zmk,behavior-mod-morph";
+            bindings   = <&kp RBKT>, <&kp LBKT>;
+            mods       = <(MOD_RALT)>;
         };
 
         morph_rbracket: morph_rbracket_node {
-            compatible     = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings       = <&kp APOS>, <&kp RBKT>;
-            mods           = <(MOD_RALT)>;
+            compatible = "zmk,behavior-mod-morph";
+            bindings   = <&kp APOS>, <&kp RBKT>;
+            mods       = <(MOD_RALT)>;
         };
 
         morph_lbrace: morph_lbrace_node {
-            compatible     = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings       = <&kp APOS>, <&kp APOS>;
-            mods           = <(MOD_RALT)>;
+            compatible = "zmk,behavior-mod-morph";
+            bindings   = <&kp APOS>, <&kp APOS>;
+            mods       = <(MOD_RALT)>;
         };
 
         morph_rbrace: morph_rbrace_node {
-            compatible     = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings       = <&kp NUHS>, <&kp RCBR>;
-            mods           = <(MOD_RALT)>;
+            compatible = "zmk,behavior-mod-morph";
+            bindings   = <&kp NUHS>, <&kp RCBR>;
+            mods       = <(MOD_RALT)>;
         };
     };
 
@@ -60,7 +56,7 @@
                 &trans     &trans    &kp UP     &trans    &trans    &trans     &trans     &trans    &kp PG_UP  &trans    &morph_lbracket &morph_rbracket
                 &trans     &kp LEFT   &kp DOWN   &kp RIGHT  &kp DOLLAR &trans     &trans     &kp HOME   &kp PG_DN  &kp END    &morph_lbrace  &morph_rbrace
                 &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &kp MINUS  &kp PLUS   &trans    &trans     &kp DOLLAR
-                            &trans     &trans     &trans     &kp DEL    &trans     &trans     &trans    &trans     &trans
+                            &trans     &trans     &trans     &kp DEL    &trans     &trans     &trans     &trans     &trans     &trans
             >;
         };
     };
