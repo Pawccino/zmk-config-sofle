@@ -14,26 +14,26 @@
     behaviors {
         morph_lbracket: morph_lbracket_node {
             compatible = "zmk,behavior-mod-morph";
-            bindings   = <&kp RBKT>, <&kp LBKT>;
-            mods       = <(MOD_RALT)>;
+            bindings   = <&kp RBKT &kp LBKT>;
+            mods       = <MOD_RALT>;
         };
 
         morph_rbracket: morph_rbracket_node {
             compatible = "zmk,behavior-mod-morph";
-            bindings   = <&kp APOS>, <&kp RBKT>;
-            mods       = <(MOD_RALT)>;
+            bindings   = <&kp APOS &kp RBKT>;
+            mods       = <MOD_RALT>;
         };
 
         morph_lbrace: morph_lbrace_node {
             compatible = "zmk,behavior-mod-morph";
-            bindings   = <&kp APOS>, <&kp APOS>;
-            mods       = <(MOD_RALT)>;
+            bindings   = <&kp APOS &kp APOS>;
+            mods       = <MOD_RALT>;
         };
 
         morph_rbrace: morph_rbrace_node {
             compatible = "zmk,behavior-mod-morph";
-            bindings   = <&kp NUHS>, <&kp RCBR>;
-            mods       = <(MOD_RALT)>;
+            bindings   = <&kp NUHS &kp RCBR>;
+            mods       = <MOD_RALT>;
         };
     };
 
