@@ -2,9 +2,56 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/modifiers.h>
 #include <behaviors.dtsi>
-#include "behaviors_brackets.dtsi"
 
 / {
+    /*–– 1) Define your macros ––*/
+    behaviors {
+        /* [ */
+        square_bracket_open: open_sq {
+            compatible     = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press   &kp RALT    /* hold AltGr */
+                &macro_tap     &kp N5      /* tap “5” → “[” */
+                &macro_release &kp RALT    /* release AltGr */
+            >;
+        };
+
+        /* ] */
+        square_bracket_close: close_sq {
+            compatible     = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press   &kp RALT
+                &macro_tap     &kp N6      /* tap “6” → “]” */
+                &macro_release &kp RALT
+            >;
+        };
+
+        /* { */
+        curly_brace_open: open_cu {
+            compatible     = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press   &kp RALT
+                &macro_tap     &kp N8      /* tap “8” → “{” */
+                &macro_release &kp RALT
+            >;
+        };
+
+        /* } */
+        curly_brace_close: close_cu {
+            compatible     = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press   &kp RALT
+                &macro_tap     &kp N9      /* tap “9” → “}” */
+                &macro_release &kp RALT
+            >;
+        };
+    };
+
+    /*–– 2) Your keymap ––*/
     keymap {
         compatible = "zmk,keymap";
 
@@ -23,13 +70,15 @@
                 /* F-row */
                 &kp GRAVE    &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
 
-                /* Q-row: use mod-morph behaviors */
-                &trans       &trans      &kp UP      &trans      &trans      &trans      &trans      &trans      &kp PG_UP   &trans      &ra_lbkt    &ra_rbkt
+                /* Q-row — arrow keys, then square brackets via macros */
+                &trans       &trans      &kp UP      &trans      &trans      &trans      &trans      &trans      &kp PG_UP   &trans
+                &square_bracket_open  &square_bracket_close
 
-                /* A-row: curly braces */
-                &trans       &kp LEFT    &kp DOWN    &kp RIGHT   &kp DOLLAR  &trans      &trans      &kp HOME    &kp PG_DN   &kp END     &ra_lcbr    &ra_rcbr
+                /* A-row — cursor keys, then curly braces via macros */
+                &trans       &kp LEFT    &kp DOWN    &kp RIGHT   &kp DOLLAR  &trans      &trans      &kp HOME    &kp PG_DN   &kp END
+                &curly_brace_open     &curly_brace_close
 
-                /* Z-row */
+                /* Z-row + punctuation */
                 &trans       &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp MINUS   &kp PLUS    &trans      &trans      &kp DOLLAR
 
                 /* Space-row */
