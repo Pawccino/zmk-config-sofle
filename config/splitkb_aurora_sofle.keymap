@@ -1,6 +1,6 @@
 /dts-v1/;
 / {
-    macros {
+    behaviors {
         /* [ */
         open_sq: bracket_open {
             compatible     = "zmk,behavior-macro";
@@ -41,7 +41,7 @@
                 , &macro_release  &kp RALT
             >;
         };
-        /* tap Right-Alt by itself */
+        /* Tap Right-Alt */
         tap_ralt: ralt_tap {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -74,10 +74,19 @@
 
         lower_layer {
             bindings = <
+                /* F-row */
                 &kp GRAVE    &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
+
+                /* Q-row: arrows + [ ] */
                 &trans       &trans      &kp UP      &trans      &trans      &trans      &trans      &trans      &kp PG_UP   &trans      &open_sq    &close_sq
+
+                /* A-row: arrows + { } */
                 &trans       &kp LEFT    &kp DOWN    &kp RIGHT   &kp DOLLAR  &trans      &trans      &kp HOME    &kp PG_DN   &kp END     &open_cu    &close_cu
+
+                /* Z-row: tap RALT + AltGr+A */
                 &trans       &trans      &trans      &trans      &trans      &trans      &tap_ralt   &altgr_a    &trans      &kp MINUS   &kp PLUS    &trans      &trans      &kp DOLLAR
+
+                /* Space-row */
                             &trans      &trans      &trans      &kp DEL     &trans      &trans      &trans      &trans      &trans
             >;
         };
