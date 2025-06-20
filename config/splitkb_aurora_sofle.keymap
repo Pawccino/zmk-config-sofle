@@ -4,69 +4,56 @@
 #include <behaviors.dtsi>
 
 / {
-    behaviors {
-        /* [  : hold AltGr, tap 5, release AltGr */
-        square_bracket_open: open_sq {
+    macros {
+        open_sq: bracket_open {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &macro_press   &kp RALT
-                &macro_tap     &kp N5
-                &macro_release &kp RALT
-            >;
+            bindings
+                = <&macro_press   &kp RALT>
+                , <&macro_tap     &kp N5>
+                , <&macro_release &kp RALT>
+                ;
         };
-
-        /* ]  : hold AltGr, tap 6, release AltGr */
-        square_bracket_close: close_sq {
+        close_sq: bracket_close {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &macro_press   &kp RALT
-                &macro_tap     &kp N6
-                &macro_release &kp RALT
-            >;
+            bindings
+                = <&macro_press   &kp RALT>
+                , <&macro_tap     &kp N6>
+                , <&macro_release &kp RALT>
+                ;
         };
-
-        /* {  : hold AltGr, tap 8, release AltGr */
-        curly_brace_open: open_cu {
+        open_cu: brace_open {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &macro_press   &kp RALT
-                &macro_tap     &kp N8
-                &macro_release &kp RALT
-            >;
+            bindings
+                = <&macro_press   &kp RALT>
+                , <&macro_tap     &kp N8>
+                , <&macro_release &kp RALT>
+                ;
         };
-
-        /* }  : hold AltGr, tap 9, release AltGr */
-        curly_brace_close: close_cu {
+        close_cu: brace_close {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &macro_press   &kp RALT
-                &macro_tap     &kp N9
-                &macro_release &kp RALT
-            >;
+            bindings
+                = <&macro_press   &kp RALT>
+                , <&macro_tap     &kp N9>
+                , <&macro_release &kp RALT>
+                ;
         };
-
-        /* Tap RALT by itself */
-        tap_ralt: just_ralt {
+        just_ralt: tap_ralt {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &macro_tap     &kp RALT
-            >;
+            bindings = <&macro_tap &kp RALT>;
         };
-
-        /* AltGr + A (often produces “ä” on Swiss-DE); change &kp A if needed */
-        altgr_a: ae_macro {
+        ae_macro: altgr_a {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &macro_press   &kp RALT
-                &macro_tap     &kp A
-                &macro_release &kp RALT
-            >;
+            bindings
+                = <&macro_press   &kp RALT>
+                , <&macro_tap     &kp A>
+                , <&macro_release &kp RALT>
+                ;
         };
     };
 
@@ -79,26 +66,17 @@
                 &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp LBKT
                 &kp LCTRL   &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
                 &kp LSHFT   &kp NUBS    &kp Z       &kp X       &kp C       &kp V       &none       &none       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH
-                            &kp LGUI    &kp LALT    &mo 1       &kp BSPC    &kp SPACE   &kp DEL     &kp RET     &kp RALT    &mo 1       &kp RSHFT
+                           &kp LGUI    &kp LALT    &mo 1       &kp BSPC    &kp SPACE   &kp DEL     &kp RET     &kp RALT    &mo 1       &kp RSHFT
             >;
         };
 
         lower_layer {
             bindings = <
-                /* F-row */
-                &kp GRAVE    &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
-
-                /* Q-row: arrows then [ ] */
-                &trans       &trans      &kp UP      &trans      &trans      &trans      &trans      &trans      &kp PG_UP   &trans      &square_bracket_open  &square_bracket_close
-
-                /* A-row: arrows then { } */
-                &trans       &kp LEFT    &kp DOWN    &kp RIGHT   &kp DOLLAR  &trans      &trans      &kp HOME    &kp PG_DN   &kp END     &curly_brace_open     &curly_brace_close
-
-                /* Z-row: use two of the “none” positions for RALT tap and AltGr + A */
-                &trans       &trans      &trans      &trans      &trans      &trans      &tap_ralt   &altgr_a    &trans      &kp MINUS   &kp PLUS    &trans      &trans      &kp DOLLAR
-
-                /* Space-row */
-                              &trans      &trans      &trans      &kp DEL     &trans      &trans      &trans      &trans      &trans
+                &kp GRAVE   &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
+                &trans      &trans      &kp UP      &trans      &trans      &trans      &trans      &trans      &kp PG_UP   &trans      &open_sq    &close_sq
+                &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp DOLLAR  &trans      &trans      &kp HOME    &kp PG_DN   &kp END     &open_cu    &close_cu
+                &trans      &trans      &trans      &trans      &trans      &trans      &just_ralt  &altgr_a    &trans      &kp MINUS   &kp PLUS    &trans      &trans      &kp DOLLAR
+                            &trans      &trans      &trans      &kp DEL     &trans      &trans      &trans      &trans      &trans
             >;
         };
     };
