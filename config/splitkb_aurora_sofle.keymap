@@ -8,7 +8,6 @@
 #include <dt-bindings/zmk/modifiers.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
-#include <behaviors.dtsi>
 
 /dts-v1/;
 
@@ -28,13 +27,23 @@
 
         lower_layer {
             bindings = <
+                /* F-row */
                 &kp GRAVE   &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
-                &trans      &trans      &kp UP      &trans      &trans      &trans      &trans      &trans      &kp PG_UP   &trans      &kp RA(LBKT) &kp RA(RBKT)
-                &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp DOLLAR  &trans      &trans      &kp HOME    &kp PG_DN   &kp END     &kp RA(SQT)  &kp RA(DOLLAR)
+
+                /* Q-row */
+                &trans      &trans      &kp UP      &trans      &trans      &trans      &trans      &trans      &kp PG_UP   &trans      &mt RALT LBKT  &mt RALT RBKT
+                /*                                              [               ] */
+
+                /* A-row */
+                &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp DOLLAR  &trans      &trans      &kp HOME    &kp PG_DN   &kp END     &mt RALT LCBR  &mt RALT RCBR
+                /*                                              {               } */
+
+                /* Z-row */
                 &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp MINUS   &kp PLUS    &trans      &trans      &kp DOLLAR
-                            &trans      &trans      &trans      &kp DEL     &trans      &trans      &trans     &trans      &trans
+
+                /* Space-row */
+                            &trans      &trans      &trans      &kp DEL     &trans      &trans      &trans      &trans      &trans
             >;
         };
     };
 };
-
