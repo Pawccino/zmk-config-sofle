@@ -45,7 +45,7 @@
                 , &macro_release  &kp RALT
             >;
         };
-        /* Tap RALT */
+        /* tap Right-Alt by itself */
         tap_ralt: ralt_tap {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -89,7 +89,7 @@
                 /* A-row: arrows + { } */
                 &trans       &kp LEFT    &kp DOWN    &kp RIGHT   &kp DOLLAR  &trans      &trans      &kp HOME    &kp PG_DN   &kp END     &open_cu    &close_cu
 
-                /* Z-row: tap RALT + AltGr+A */
+                /* Z-row: tap RALT + AltGr +A */
                 &trans       &trans      &trans      &trans      &trans      &trans      &tap_ralt   &altgr_a    &trans      &kp MINUS   &kp PLUS    &trans      &trans      &kp DOLLAR
 
                 /* Space-row */
