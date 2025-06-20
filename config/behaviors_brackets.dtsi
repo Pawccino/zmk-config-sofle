@@ -1,3 +1,4 @@
+/dts-v1/;
 / {
     behaviors {
         ra_lbkt: bracket_open {
