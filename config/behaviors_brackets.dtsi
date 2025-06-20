@@ -1,0 +1,28 @@
+/ {
+    behaviors {
+        ra_lbkt: bracket_open {
+            compatible     = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings       = <&kp LBKT>, <&kp LBKT>;
+            mods           = <MOD_RALT>;
+        };
+        ra_rbkt: bracket_close {
+            compatible     = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings       = <&kp RBKT>, <&kp RBKT>;
+            mods           = <MOD_RALT>;
+        };
+        ra_lcbr: brace_open {
+            compatible     = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings       = <&kp LCBR>, <&kp LCBR>;
+            mods           = <MOD_RALT>;
+        };
+        ra_rcbr: brace_close {
+            compatible     = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings       = <&kp RCBR>, <&kp RCBR>;
+            mods           = <MOD_RALT>;
+        };
+    };
+};
