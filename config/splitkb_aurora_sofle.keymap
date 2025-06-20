@@ -5,55 +5,63 @@
 
 / {
     macros {
+        /* [ */
         open_sq: bracket_open {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press   &kp RALT>
-                , <&macro_tap     &kp N5>
-                , <&macro_release &kp RALT>
-                ;
+            bindings        = <
+                &macro_press    &kp RALT
+                , &macro_tap      &kp N5
+                , &macro_release  &kp RALT
+            >;
         };
+        /* ] */
         close_sq: bracket_close {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press   &kp RALT>
-                , <&macro_tap     &kp N6>
-                , <&macro_release &kp RALT>
-                ;
+            bindings        = <
+                &macro_press    &kp RALT
+                , &macro_tap      &kp N6
+                , &macro_release  &kp RALT
+            >;
         };
+        /* { */
         open_cu: brace_open {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press   &kp RALT>
-                , <&macro_tap     &kp N8>
-                , <&macro_release &kp RALT>
-                ;
+            bindings        = <
+                &macro_press    &kp RALT
+                , &macro_tap      &kp N8
+                , &macro_release  &kp RALT
+            >;
         };
+        /* } */
         close_cu: brace_close {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press   &kp RALT>
-                , <&macro_tap     &kp N9>
-                , <&macro_release &kp RALT>
-                ;
+            bindings        = <
+                &macro_press    &kp RALT
+                , &macro_tap      &kp N9
+                , &macro_release  &kp RALT
+            >;
         };
-        just_ralt: tap_ralt {
+        /* Tap RALT */
+        tap_ralt: ralt_tap {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp RALT>;
+            bindings        = <
+                &macro_tap      &kp RALT
+            >;
         };
-        ae_macro: altgr_a {
+        /* AltGr + A (ä on Swiss-DE) */
+        altgr_a: ae_macro {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press   &kp RALT>
-                , <&macro_tap     &kp A>
-                , <&macro_release &kp RALT>
-                ;
+            bindings        = <
+                &macro_press    &kp RALT
+                , &macro_tap      &kp A
+                , &macro_release  &kp RALT
+            >;
         };
     };
 
@@ -66,16 +74,25 @@
                 &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P       &kp LBKT
                 &kp LCTRL   &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
                 &kp LSHFT   &kp NUBS    &kp Z       &kp X       &kp C       &kp V       &none       &none       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT     &kp SLASH
-                           &kp LGUI    &kp LALT    &mo 1       &kp BSPC    &kp SPACE   &kp DEL     &kp RET     &kp RALT    &mo 1       &kp RSHFT
+                            &kp LGUI    &kp LALT    &mo 1       &kp BSPC    &kp SPACE   &kp DEL     &kp RET     &kp RALT    &mo 1       &kp RSHFT
             >;
         };
 
         lower_layer {
             bindings = <
-                &kp GRAVE   &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
-                &trans      &trans      &kp UP      &trans      &trans      &trans      &trans      &trans      &kp PG_UP   &trans      &open_sq    &close_sq
-                &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp DOLLAR  &trans      &trans      &kp HOME    &kp PG_DN   &kp END     &open_cu    &close_cu
-                &trans      &trans      &trans      &trans      &trans      &trans      &just_ralt  &altgr_a    &trans      &kp MINUS   &kp PLUS    &trans      &trans      &kp DOLLAR
+                /* F-row */
+                &kp GRAVE    &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
+
+                /* Q-row: arrows + [ ] */
+                &trans       &trans      &kp UP      &trans      &trans      &trans      &trans      &trans      &kp PG_UP   &trans      &open_sq    &close_sq
+
+                /* A-row: arrows + { } */
+                &trans       &kp LEFT    &kp DOWN    &kp RIGHT   &kp DOLLAR  &trans      &trans      &kp HOME    &kp PG_DN   &kp END     &open_cu    &close_cu
+
+                /* Z-row: tap RALT + AltGr+A */
+                &trans       &trans      &trans      &trans      &trans      &trans      &tap_ralt   &altgr_a    &trans      &kp MINUS   &kp PLUS    &trans      &trans      &kp DOLLAR
+
+                /* Space-row */
                             &trans      &trans      &trans      &kp DEL     &trans      &trans      &trans      &trans      &trans
             >;
         };
