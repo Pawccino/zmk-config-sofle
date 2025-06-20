@@ -4,54 +4,72 @@
 #include <behaviors.dtsi>
 
 / {
-    /*–– 1) Define your macros ––*/
     behaviors {
-        /* [ */
+        /* [  : hold AltGr, tap 5, release AltGr */
         square_bracket_open: open_sq {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
-                &macro_press   &kp RALT    /* hold AltGr */
-                &macro_tap     &kp N5      /* tap “5” → “[” */
-                &macro_release &kp RALT    /* release AltGr */
+                &macro_press   &kp RALT
+                &macro_tap     &kp N5
+                &macro_release &kp RALT
             >;
         };
 
-        /* ] */
+        /* ]  : hold AltGr, tap 6, release AltGr */
         square_bracket_close: close_sq {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
                 &macro_press   &kp RALT
-                &macro_tap     &kp N6      /* tap “6” → “]” */
+                &macro_tap     &kp N6
                 &macro_release &kp RALT
             >;
         };
 
-        /* { */
+        /* {  : hold AltGr, tap 8, release AltGr */
         curly_brace_open: open_cu {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
                 &macro_press   &kp RALT
-                &macro_tap     &kp N8      /* tap “8” → “{” */
+                &macro_tap     &kp N8
                 &macro_release &kp RALT
             >;
         };
 
-        /* } */
+        /* }  : hold AltGr, tap 9, release AltGr */
         curly_brace_close: close_cu {
             compatible     = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
                 &macro_press   &kp RALT
-                &macro_tap     &kp N9      /* tap “9” → “}” */
+                &macro_tap     &kp N9
+                &macro_release &kp RALT
+            >;
+        };
+
+        /* Tap RALT by itself */
+        tap_ralt: just_ralt {
+            compatible     = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_tap     &kp RALT
+            >;
+        };
+
+        /* AltGr + A (often produces “ä” on Swiss-DE); change &kp A if needed */
+        altgr_a: ae_macro {
+            compatible     = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press   &kp RALT
+                &macro_tap     &kp A
                 &macro_release &kp RALT
             >;
         };
     };
 
-    /*–– 2) Your keymap ––*/
     keymap {
         compatible = "zmk,keymap";
 
@@ -70,16 +88,14 @@
                 /* F-row */
                 &kp GRAVE    &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
 
-                /* Q-row — arrow keys, then square brackets via macros */
-                &trans       &trans      &kp UP      &trans      &trans      &trans      &trans      &trans      &kp PG_UP   &trans
-                &square_bracket_open  &square_bracket_close
+                /* Q-row: arrows then [ ] */
+                &trans       &trans      &kp UP      &trans      &trans      &trans      &trans      &trans      &kp PG_UP   &trans      &square_bracket_open  &square_bracket_close
 
-                /* A-row — cursor keys, then curly braces via macros */
-                &trans       &kp LEFT    &kp DOWN    &kp RIGHT   &kp DOLLAR  &trans      &trans      &kp HOME    &kp PG_DN   &kp END
-                &curly_brace_open     &curly_brace_close
+                /* A-row: arrows then { } */
+                &trans       &kp LEFT    &kp DOWN    &kp RIGHT   &kp DOLLAR  &trans      &trans      &kp HOME    &kp PG_DN   &kp END     &curly_brace_open     &curly_brace_close
 
-                /* Z-row + punctuation */
-                &trans       &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &kp MINUS   &kp PLUS    &trans      &trans      &kp DOLLAR
+                /* Z-row: use two of the “none” positions for RALT tap and AltGr + A */
+                &trans       &trans      &trans      &trans      &trans      &trans      &tap_ralt   &altgr_a    &trans      &kp MINUS   &kp PLUS    &trans      &trans      &kp DOLLAR
 
                 /* Space-row */
                               &trans      &trans      &trans      &kp DEL     &trans      &trans      &trans      &trans      &trans
