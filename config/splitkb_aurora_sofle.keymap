@@ -1,8 +1,8 @@
+/dts-v1/;
+
 #include <dt-bindings/zmk/modifiers.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-
-/dts-v1/;
 
 / {
     behaviors {
